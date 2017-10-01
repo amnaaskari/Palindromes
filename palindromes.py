@@ -2,7 +2,8 @@ from flask import Flask, jsonify, request, abort
 import time  
 
 def is_palindrome(my_string):
-    lowercase_chars = ''.join(char for char in my_string if char.isalnum()).lower() #Punctuation including special characters are ignored. Numbers stay the same and all characters are changed to lowercase for effective comparison of content.
+    lowercase_chars = ''.join(char for char in my_string if char.isalnum()).lower() #Punctuation including special characters are ignored. Numbers stay the same and all characters are changed to lowercase for effective comparison of content. 
+    #To ignore numbers too, use str.isalpha() instead of str.isalnum()
     if lowercase_chars==lowercase_chars[::-1]: #testing content of original and reversed string for equality.
         return True
     else: 
