@@ -1,0 +1,21 @@
+A few comments: 
+
+On the type of input: 
+The program accepts alphanumeric characters in the input string, and ignores all other characters. Hence, letters and numbers are considered in when assessing whether a palindrome is a palindrome. Numbers can be excluded quite easily by just using the str.isalpha() function instead of str.isalnum() on line 5 in Palindromes.py. See comments
+
+On special characters and punctuation: 
+As special characters like "@" are counted in the same category as typical punctuation i.e. ‘, “ !-  and whitespaces, these are also ignored. If we want these to be considered in the determination of a Palindrome, we can change the dependancy on just alphanumeric or alphabetic characters to a new array of letters,characters and the special characters we want to include using the existing arrays in the string module in Python. 
+
+On strings with one, two letters and identical content: 
+These strings are obviously Palindromes and may not be considered legitimate ones. So if we want these to be eliminated or disincluded, we can simply do that by using more if statements in the is_pallindrome function: 
+
+    def is_pallindrome(my_string):
+        ...
+        if len(mystring)<3: 
+            return "Try something bigger!"
+        if all (char==mystring[0] for char in my_string):
+            return "All the characters are the same, try something with different content!"
+        
+        ...
+
+We can add anything after the return keyword, such as False or None or even raise a unique kind of error. I didn't include this as I wanted to make the application return only what was specified in the challenge descripton. 
