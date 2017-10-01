@@ -3,12 +3,13 @@ import random
 
 """
 Functions are taken from palindromes.py and modified to operate outside of the Flask framework. 
-For adding palindromes, pseudo-time is created so that we can simulate palindromes being initialised at times that are more than just a few microseconds away from eachother which is what would happen if the time module is used. 
+For adding palindromes, pseudo-time is created using random number generation so that we can simulate palindromes being initialised at times that are at a reasonable distance from eachother. The time limit condition uses 
+a value of 100 instead of 600 but follows the same logic.
 
 """
 
 def is_palindrome(my_string):
-    if type(my_string)!=str: #Taken from line 25 in palindromes.py, where it results in a bad request. Here it returns None for the purpose of testing.
+    if type(my_string)!=str: #Taken from line 19 in palindromes.py, where it results in a bad request. Here it returns None for the purpose of testing.
         return None  
     lowercase_chars = ''.join(char for char in my_string if char.isalnum()).lower()
     if lowercase_chars==lowercase_chars[::-1]:
