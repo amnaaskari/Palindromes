@@ -1,5 +1,5 @@
 # Palindromes
-A simple RESTful API/service that stores valid palindromes that are entered by the user and returns the most recent ones. 
+A simple RESTful API/service that stores valid palindromes that are entered by the user and returns the 10 most recent ones. 
 
 This service is built in Python 3.6, using the Flask (0.12.2) web framework.
 
